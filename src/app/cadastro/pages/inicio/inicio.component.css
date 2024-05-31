@@ -1,0 +1,76 @@
+.container {
+  width: 540px;
+  height: 750px;
+  border: 1px solid #000;
+  background-color: #e2e0e0 ;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 477px;
+}
+
+.button-wrapper button {
+  width: 223px;
+  height: 38px;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+.button-wrapper button:first-child {
+  background-color: #3E3D3D;
+  color: #FFFFFF;
+  margin-right: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-top: 25px; /* Adicionado espaçamento superior */
+}
+
+.checkbox-wrapper {
+  width: 477px;
+  height: 35px;
+  border: 1px solid #000;
+  background-color: #FFFFFF ;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Alinhar o label no centro horizontalmente */
+  margin-top: 25px; /* Adicionado espaçamento superior */
+  line-height: 35px; /* Centralizar verticalmente o texto */
+  border-radius: 10px;
+}
+
+.checkbox-container {
+  width: 100%; /* Ocupa metade da largura do checkbox-wrapper */
+  display: flex;
+  justify-content: space-between; /* Alinha a label e o checkbox à esquerda e à direita */
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.4); /* Aumenta o tamanho do checkbox */
+  margin-left: auto; /* Move o checkbox para a direita */
+}
+
+label {
+  margin-right: 10px; /* Adiciona espaçamento entre a label e o checkbox */
+}
+
+.inner-container {
+  width: 443px;
+  height: 270px;
+  background-color: #e2e0e0 ;
+  padding: 20px;
+  text-align: justify;
+}

@@ -1,0 +1,57 @@
+
+<app-simple-header [tela]="'Cadastra Parceiro'" [menus]="menus"></app-simple-header>
+  <div class="container">
+    <h1>Cadastro do Parceiro da Comunicação</h1>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Escolha o Paciente
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Alguma ação</a>
+        <a class="dropdown-item" href="#">Outra ação.</a>
+        <a class="dropdown-item" href="#">Alguma coisa aqui</a>
+      </div>
+    </div>
+    <form>
+      <div class="input-group">
+        <input type="text" placeholder="Nome">
+      </div>
+      <div class="input-group">
+        <input type="text" placeholder="Endereço">
+      </div>
+      <div class="input-group">
+        <input type="text" placeholder="Telefone">
+      </div>
+      <div class="input-group">
+        <input type="text" placeholder="CPF">
+      </div>
+      <div class="input-group">
+        <input type="text" placeholder="Data de Orientação">
+      </div>
+      <div class="input-group">
+        <input type="text" placeholder="Relação com o Paciente">
+      </div>
+      <div class="input-group">
+        <input type="text" placeholder="Email">
+      </div>
+      <div class="input-group">
+        <input type="text" placeholder="Senha">
+      </div>
+      <div class="checkbox-wrapper">
+        <div class="checkbox-container">
+          <label for="sistema">Permitir acesso ao sistema</label>
+          <input type="checkbox" id="sistema" name="sistema">
+        </div>
+      </div>
+      <div class="checkbox-wrapper">
+        <div class="checkbox-container">
+          <label for="pictogramas">Permitir editar pictogramas</label>
+          <input type="checkbox" id="pictogramas" name="pictogramas">
+        </div>
+      </div>
+      <div class="button-group">
+        <button class="cancel-button">Cancelar</button>
+        <button>Salvar</button>
+      </div>
+    </form>
+  </div>

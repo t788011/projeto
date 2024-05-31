@@ -1,0 +1,112 @@
+
+<app-simple-header [tela]="'Dados de Pacientes'" [menus]="menus"></app-simple-header>
+<div class="container">
+  <div class="left-container">
+    <div class="form-container">
+      <h1 class="titulo">FILTRO PARA BUSCA DO PACIENTE</h1>
+      <p>Escolha uma opção para buscar o paciente</p>
+      <form>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pacientes ativados
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Alguma ação</a>
+            <a class="dropdown-item" href="#">Outra ação.</a>
+            <a class="dropdown-item" href="#">Alguma coisa aqui</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pacientes desativados
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Alguma ação</a>
+            <a class="dropdown-item" href="#">Outra ação.</a>
+            <a class="dropdown-item" href="#">Alguma coisa aqui</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            CPFs ativados
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Alguma ação</a>
+            <a class="dropdown-item" href="#">Outra ação.</a>
+            <a class="dropdown-item" href="#">Alguma coisa aqui</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            CPFs desativados
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Alguma ação</a>
+            <a class="dropdown-item" href="#">Outra ação.</a>
+            <a class="dropdown-item" href="#">Alguma coisa aqui</a>
+          </div>
+        </div>
+        <div class="input-group-filtro">
+          <input type="text" placeholder="Digite o nome ou CPF ativo">
+          <button class="buscar">Buscar</button>
+        </div>
+        <div class="input-group-filtro">
+          <input type="text" placeholder="Digite o nome ou CPF desativado">
+          <button class="buscar">Buscar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="image-container">
+  <div class="center-image">
+    <img src="../../../../assets/img/setaDireita.png" alt="Imagem centralizada">
+  </div>
+  </div>
+  <div class="right-container">
+    <div class="form-container">
+      <h1>Cadastro do Paciente</h1>
+      <form>
+        <div class="input-group">
+          <input type="text" placeholder="Nome">
+        </div>
+        <div class="input-group">
+          <input type="text" placeholder="Data de Nascimento">
+        </div>
+        <div class="input-group">
+          <input type="text" placeholder="Endereço">
+        </div>
+        <div class="input-group">
+          <input type="text" placeholder="Telefone">
+        </div>
+        <div class="input-group">
+          <input type="text" placeholder="CPF">
+        </div>
+        <div class="input-group">
+          <input type="text" placeholder="Tipo de Deficiência">
+        </div>
+        <div class="input-group">
+          <input type="text" placeholder="Nome do Responsável">
+        </div>
+        <div class="input-group">
+          <input type="text" placeholder="Email">
+        </div>
+        <div class="input-group">
+          <input type="text" placeholder="Fonoaudiólogo vinculado ao paciente">
+        </div>
+        <div class="input-group">
+          <input type="text" placeholder="Status Financeiro">
+        </div>
+        <div class="checkbox-wrapper">
+          <div class="checkbox-container">
+            <label for="sistema">Permitir acesso ao sistema</label>
+            <input type="checkbox" id="sistema" name="sistema">
+          </div>
+        </div>
+        <div class="button-group">
+          <button class="cancel-button">Cancelar</button>
+          <button>Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
