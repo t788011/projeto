@@ -1,4 +1,37 @@
 <app-simple-header [tela]="'Dados de Pacientes'" [menus]="menus"></app-simple-header>
-  <div class="d-flex flex-row">
-    <img class="imagem-de-fundo" src="../../../assets/img/PaginaConstrucao.png" alt="Plano de Fundo">
+<div class="body">
+  <div class="container">
+    <div class="toolbar">
+      <button (click)="playFigures()" class="control-button">Reproduzir Escolha</button>
+      <button (click)="clearFigures()" class="control-button">Limpar</button>
+      <button (click)="deleteLastFigure()" class="control-button">Apagar Palavra</button>
+    </div>
+    <div class="phrase-area">
+      <div class="selected-figures">
+        <div *ngFor="let figure of selectedFigures" class="figure">
+          <img [src]="getFigureSrc(figure)" [alt]="figure">
+        </div>
+      </div>
+    </div>
+    <div class="figures-area">
+      <div *ngFor="let figure of figures" class="figure" (click)="addFigure(figure.label)">
+        <img [src]="figure.src" [alt]="figure.label">
+      </div>
+    </div>
+    <!-- <div class="config-area">
+      <label for="num-figures">Número de figuras na tela:</label>
+      <select id="num-figures" (change)="saveConfiguration()">
+        <option value="4">4</option>
+        <option value="8" selected>8</option>
+        <option value="16">16</option>
+        <option value="32">32</option>
+      </select>
+      <button (click)="saveConfiguration()" class="control-button">Salvar Configuração</button>
+    </div>
+    <div class="themes-area">
+      <div class="theme">Passear</div>
+      <div class="theme">Alimentos</div>
+      <div class="theme">Brincadeiras</div>
+    </div> -->
   </div>
+</div>

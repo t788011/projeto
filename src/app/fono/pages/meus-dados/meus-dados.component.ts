@@ -1,13 +1,14 @@
-import { RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { SimpleHeaderComponent } from '../../../components/simple-header/simple-header.component';
 
 @Component({
   selector: 'app-meus-dados',
   standalone: true,
-  imports: [RouterModule, SimpleHeaderComponent],
+  imports: [RouterModule, CommonModule, SimpleHeaderComponent],
   templateUrl: './meus-dados.component.html',
-  styleUrl: './meus-dados.component.css'
+  styleUrls: ['./meus-dados.component.css']
 })
 export class MeusDadosComponent {
   public menus = [
@@ -20,5 +21,30 @@ export class MeusDadosComponent {
     {nome:'Meus dados', path: "fono/pages/meus-dados"},
     {nome:'Dados de Pacientes', path: "fono/pages/dados-de-pacientes"},
     {nome:'Entrevistas', path: "fono/pages/entrevistas"}
-  ]
+  ];
+
+  public playSelection(): void {
+    console.log('Play button clicked');
+    // Adicione a funcionalidade para reproduzir a seleção
+  }
+
+  public clearSelection(): void {
+    console.log('Clear button clicked');
+    // Adicione a funcionalidade para limpar a seleção
+  }
+
+  public deleteWord(): void {
+    console.log('Delete word button clicked');
+    // Adicione a funcionalidade para apagar a palavra
+  }
+
+  public saveConfiguration(): void {
+    console.log('Save configuration');
+    // Adicione a funcionalidade para salvar a configuração
+  }
+
+  public changeTheme(theme: string): void {
+    console.log(`${theme} theme selected`);
+    // Adicione a funcionalidade para mudar o tema
+  }
 }

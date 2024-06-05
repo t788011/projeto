@@ -1,4 +1,4 @@
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
 import { SimpleHeaderComponent } from '../../../components/simple-header/simple-header.component';
 
@@ -26,5 +26,12 @@ export class CadastroFonoComponent {
     {nome:'Sistema', path: "home/pages/sistema"},
     {nome:'Comunicação' ,path: "home/pages/comunicacao"}
  ]
+
+ constructor(private router: Router){
+
+ }
+public redirectToCadastroInicial(){
+ this.router.navigate(['cadastro/pages/inicio'])
+ }
 
 }

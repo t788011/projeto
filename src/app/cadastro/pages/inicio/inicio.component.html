@@ -1,36 +1,34 @@
 <app-simple-header [tela]="'Cadastra-se'" [menus]="menus"></app-simple-header>
-<body>
-  <div>
-    <div class="container">
-      <div>
-        <img src="../../../../assets/img/logoInformacao.png" alt="Logo de Informação">
-      </div>
-      <div>
-        <h1>INFORMAÇÕES INICIAIS DO CADASTRO</h1>
-      </div>
-      <div class="inner-container">
-        <p>Na próxima etapa deverá preencher algumas informações que serão conferidas pelo setor administrativo. Após a verificação dos dados receberá um e-mail com as orientações para prosseguir com o processo e as formas de pagamento disponíveis, do qual encontrará informações como:</p>
-        <ul>
-            <li>Escolha do fonoaudiólogo que irá atendê-lo</li>
-            <li>Agendar a entrevista inicial com o fonoaudiólogo escolhido</li>
-        </ul>
-      </div>
-      <div class="checkbox-wrapper">
-        <div class="checkbox-container">
-          <label for="fonoaudiologo">Sou Fonoaudiólogo</label>
-          <input type="checkbox" id="fonoaudiologo" name="fonoaudiologo">
-        </div>
-      </div>
-      <div class="checkbox-wrapper">
-        <div class="checkbox-container">
-          <label for="paciente">Sou Paciente</label>
-          <input type="checkbox" id="paciente" name="paciente">
-        </div>
-      </div>
-      <div class="button-wrapper">
-        <button class="button" >Voltar</button>
-        <button class="button" >Avançar</button>
+<div>
+  <div class="container">
+    <div>
+      <img src="../../../../assets/img/logoInformacao.png" alt="Logo de Informação">
+    </div>
+    <div>
+      <h1>INFORMAÇÕES INICIAIS DO CADASTRO</h1>
+    </div>
+    <div class="inner-container">
+      <p>Na próxima etapa deverá preencher algumas informações que serão conferidas pelo setor administrativo. Após a verificação dos dados receberá um e-mail com as orientações para prosseguir com o processo e as formas de pagamento disponíveis, do qual encontrará informações como:</p>
+      <ul>
+        <li>Escolha do fonoaudiólogo que irá atendê-lo</li>
+        <li>Agendar a entrevista inicial com o fonoaudiólogo escolhido</li>
+      </ul>
+    </div>
+    <div class="checkbox-wrapper">
+      <div class="checkbox-container">
+        <label for="fonoaudiologo">Sou Fonoaudiólogo</label>
+        <input type="checkbox" id="fonoaudiologo" name="fonoaudiologo" (change)="onFonoaudiologoChecked($event)" [disabled]="isPaciente">
       </div>
     </div>
+    <div class="checkbox-wrapper">
+      <div class="checkbox-container">
+        <label for="paciente">Sou Paciente</label>
+        <input type="checkbox" id="paciente" name="paciente" (change)="onPacienteChecked($event)" [disabled]="isFonoaudiologo">
+      </div>
+    </div>
+    <div class="button-wrapper">
+      <button class="button" type="submit" (click)="redirectToLogin()">Voltar</button>
+      <button class="button" [disabled]="!isAdvanceButtonActive" (click)="redirectToRegister()">Avançar</button>
+    </div>
   </div>
-</body>
+</div>

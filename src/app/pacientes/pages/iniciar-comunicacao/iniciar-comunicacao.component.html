@@ -1,4 +1,28 @@
 <app-simple-header [tela]="'Comunicar-se'" [menus]="menus"></app-simple-header>
-  <div class="d-flex flex-row">
-    <img class="imagem-de-fundo" src="../../../assets/img/PaginaConstrucao.png" alt="Plano de Fundo">
+<div class="body">
+  <div class="container">
+    <div class="toolbar">
+      <div>
+        <a (click)="playFigures()" class="control-button play"><img src="../../../../assets/img/reproduzirEscolha.png" alt="Som"></a>
+      </div>
+      <div>
+        <a (click)="clearFigures()" class="control-button"><img src="../../../../assets/img/limpar.png" alt="Limpar"></a>
+      </div>
+      <div>
+        <a (click)="deleteLastFigure()" class="control-button"><img src="../../../../assets/img/apagarPalavras.png" alt="Apagar Palavra"></a>
+      </div>
+    </div>
+    <div class="phrase-area">
+      <div class="selected-figures">
+        <div *ngFor="let figure of selectedFigures" class="figure">
+          <img [src]="getFigureSrc(figure)" [alt]="figure">
+        </div>
+      </div>
+    </div>
+    <div class="figures-area">
+      <div *ngFor="let figure of figures" class="figure" (click)="addFigure(figure.label)">
+        <img [src]="figure.src" [alt]="figure.label">
+      </div>
+    </div>
   </div>
+</div>
