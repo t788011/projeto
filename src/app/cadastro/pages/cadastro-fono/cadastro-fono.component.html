@@ -1,43 +1,43 @@
 <app-simple-header [tela]="'Cadastra-se'" [menus]="menus"></app-simple-header>
-  <div class="container">
-    <h1>Cadastro Fonoaudiólogo</h1>
-    <form>
-      <div class="input-group">
-        <input type="text" placeholder="Nome">
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="Data de Nascimento">
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="Endereço">
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="Telefone">
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="CPF">
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="CRFA">
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="Data de Expiração CRFA">
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="Email">
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="Confirme o Email">
-      </div>
-      <div class="input-group">
-        <input type="password" placeholder="Senha">
-      </div>
-      <div class="input-group">
-        <input type="password" placeholder="Confirme a Senha">
-      </div>
-      <div class="button-group">
-        <button class="cancel-button" type="submit" (click)="redirectToCadastroInicial()">Cancelar</button>
-        <button>Salvar</button>
-      </div>
-    </form>
-  </div>
+<div class="container">
+  <h1>Cadastro Fonoaudiólogo</h1>
+  <form (ngSubmit)="saveFono()">
+    <div class="input-group">
+      <input type="text" placeholder="Nome" [(ngModel)]="fono.first_name" name="first_name" required>
+    </div>
+    <div class="input-group">
+      <input type="date" placeholder="Data de Nascimento" [(ngModel)]="fono.birth_date" name="birth_date" required>
+    </div>
+    <div class="input-group">
+      <input type="text" placeholder="Endereço" [(ngModel)]="fono.address" name="address" required>
+    </div>
+    <div class="input-group">
+      <input type="text" placeholder="Telefone" [(ngModel)]="fono.phone" name="phone" required>
+    </div>
+    <div class="input-group">
+      <input type="text" placeholder="CPF" [(ngModel)]="fono.cpf" name="cpf" required>
+    </div>
+    <div class="input-group">
+      <input type="text" placeholder="CRFA" [(ngModel)]="fono.crfa" name="crfa" required>
+    </div>
+    <div class="input-group">
+      <input type="date" placeholder="Data de Expiração CRFA" [(ngModel)]="fono.crfa_expiry" name="crfa_expiry" required>
+    </div>
+    <div class="input-group">
+      <input type="email" placeholder="Email" [(ngModel)]="fono.email" name="email" required>
+    </div>
+    <div class="input-group">
+      <input type="email" placeholder="Confirme o Email" [(ngModel)]="fono.confirm_email" name="confirm_email" required>
+    </div>
+    <div class="input-group">
+      <input type="password" placeholder="Senha" [(ngModel)]="fono.password" name="password" required>
+    </div>
+    <div class="input-group">
+      <input type="password" placeholder="Confirme a Senha" [(ngModel)]="fono.confirm_password" name="confirm_password" required>
+    </div>
+    <div class="button-group">
+      <button class="cancel-button" type="button" (click)="redirectToCadastroInicial()">Cancelar</button>
+      <button type="submit">Salvar</button>
+    </div>
+  </form>
+</div>

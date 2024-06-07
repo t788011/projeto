@@ -1,21 +1,22 @@
 <app-simple-header [tela]="'Iniciar sessão'" [menus]="menus"></app-simple-header>
-<body>
-  <div class="wrapper">
-    <div class="container">
-      <img src="../../../assets/img/logoEntrar.png" alt="Logo entrar">
-        <form>
-            <input type="text" id="cpf" name="cpf" placeholder="Digite o número do CPF">
-            <label for="cpf" class="label-text">CPF</label>
-            <input type="password" id="senha" name="senha" placeholder="Digite a senha">
-            <label for="senha" class="label-text">SENHA</label>
-            <button type="submit" (click)="redirectToPatients()">Entrar</button>
-        </form>
-        <a href="#">Esqueceu a senha?</a><br>
-          <div class="signup">
-              <span class="signup-text">Não tem cadastro?</span>
-              <button type="submit" (click)="redirectToCadastroInicial()">Cadastrar</button>
-          </div>
+<div class="wrapper">
+  <div class="container">
+    <img src="../../../assets/img/logoEntrar.png" alt="Logo entrar">
+    <form (submit)="login(cpf.value, senha.value)">
+      <input type="text" id="cpf" name="cpf" placeholder="Digite o número do CPF" #cpf required>
+      <label for="cpf" class="label-text">CPF</label>
+      <input type="password" id="senha" name="senha" placeholder="Digite a senha" #senha required>
+      <label for="senha" class="label-text">SENHA</label>
+      <button type="submit">Entrar</button>
+    </form>
+    <a href="#">Esqueceu a senha?</a><br>
+    <div class="signup">
+      <span class="signup-text">Não tem cadastro?</span>
+      <button type="button" (click)="redirectToCadastroInicial()">Cadastrar</button>
     </div>
   </div>
-</body>
+</div>
+
+
+
 <!-- <a [routerLink]="['/patients']">patients</a> -->

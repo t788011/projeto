@@ -1,43 +1,43 @@
 <app-simple-header [tela]="'Cadastra-se'" [menus]="menus"></app-simple-header>
-  <div class="container">
-    <h1>Cadastro Paciente</h1>
-    <form>
-      <div class="input-group">
-        <input type="text" placeholder="Nome">
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="Data de Nascimento">
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="Endereço">
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="Telefone">
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="CPF">
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="Tipo de Deficiência">
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="Nome do Responsável">
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="Email">
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="Confirme o Email">
-      </div>
-      <div class="input-group">
-        <input type="password" placeholder="Senha">
-      </div>
-      <div class="input-group">
-        <input type="password" placeholder="Confirme a Senha">
-      </div>
-      <div class="button-group">
-        <button class="cancel-button" type="submit" (click)="redirectToCadastroInicial()">Cancelar</button>
-        <button>Salvar</button>
-      </div>
-    </form>
-  </div>
+<div class="container">
+  <h1>Cadastro Paciente</h1>
+  <form (submit)="cadastrarPaciente()">
+    <div class="input-group">
+      <input type="text" placeholder="Nome" [(ngModel)]="paciente.nome" name="nome">
+    </div>
+    <div class="input-group">
+      <input type="text" placeholder="Data de Nascimento" [(ngModel)]="paciente.dataNascimento" name="dataNascimento">
+    </div>
+    <div class="input-group">
+      <input type="text" placeholder="Endereço" [(ngModel)]="paciente.endereco" name="endereco">
+    </div>
+    <div class="input-group">
+      <input type="text" placeholder="Telefone" [(ngModel)]="paciente.telefone" name="telefone">
+    </div>
+    <div class="input-group">
+      <input type="text" placeholder="CPF" [(ngModel)]="paciente.cpf" name="cpf">
+    </div>
+    <div class="input-group">
+      <input type="text" placeholder="Tipo de Deficiência" [(ngModel)]="paciente.tipoDeficiencia" name="tipoDeficiencia">
+    </div>
+    <div class="input-group">
+      <input type="text" placeholder="Nome do Responsável" [(ngModel)]="paciente.nomeResponsavel" name="nomeResponsavel">
+    </div>
+    <div class="input-group">
+      <input type="text" placeholder="Email" [(ngModel)]="paciente.email" name="email">
+    </div>
+    <div class="input-group">
+      <input type="text" placeholder="Confirme o Email" [(ngModel)]="paciente.confirmarEmail" name="confirmarEmail">
+    </div>
+    <div class="input-group">
+      <input type="password" placeholder="Senha" [(ngModel)]="paciente.senha" name="senha">
+    </div>
+    <div class="input-group">
+      <input type="password" placeholder="Confirme a Senha" [(ngModel)]="paciente.confirmarSenha" name="confirmarSenha">
+    </div>
+    <div class="button-group">
+      <button class="cancel-button" type="button" (click)="redirectToCadastroInicial()">Cancelar</button>
+      <button type="submit">Salvar</button>
+    </div>
+  </form>
+</div>
