@@ -1,13 +1,14 @@
 import { Router, RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { NgIf, NgFor, NgClass } from '@angular/common';
 import { SimpleHeaderComponent } from '../../../components/simple-header/simple-header.component';
 import { FormsModule } from '@angular/forms';
+import { FonoService } from '../../../services/fono.service';
 
 @Component({
   selector: 'app-cadastro-paciente',
   standalone: true,
-  imports: [RouterModule, SimpleHeaderComponent, FormsModule],
+  imports: [RouterModule, SimpleHeaderComponent, NgIf, NgFor, NgClass, FormsModule],
   templateUrl: './cadastro-paciente.component.html',
   styleUrls: ['./cadastro-paciente.component.css']
 })
@@ -43,20 +44,25 @@ export class CadastroPacienteComponent {
     confirmarSenha: ''
   };
 
-  constructor(private router: Router, private http: HttpClient) {}
+ 
 
-  public redirectToCadastroInicial(){
+
+constructor(private router: Router, private fonoService: FonoService) { }
+
+  public redirectToCadastroInicial() {
     this.router.navigate(['cadastro/pages/inicio']);
   }
 
-  public cadastrarPaciente() {
-    this.http.post('http://localhost:3302/cadastropaciente', this.paciente)
-      .subscribe(response => {
-        alert('Cadastro realizado com sucesso!');
-        this.router.navigate(['login']);
-      }, error => {
-        console.error(error);
-        alert('Erro ao cadastrar paciente');
-      });
+  public savePaciente() {
+    if (this.paciente.email !== this.paciente.confirmarEmail || this.paciente.senha !== this.paciente.confirmarSenha) {
+      alert("Email e/ou senha não conferem!");
+      return;
+    }
+    this.fonoService.savePaciente(this.paciente).subscribe(response => {
+      alert("Cadastro realizado com sucesso!");
+      this.redirectToCadastroInicial();
+    }, error => {
+      alert("Erro ao realizar cadastro!");
+    });
   }
 }

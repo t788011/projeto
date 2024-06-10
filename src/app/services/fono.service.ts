@@ -16,14 +16,14 @@ export class FonoService {
   }
 
   savePaciente(paciente: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}cadastrarpaciente`, paciente);
+    return this.http.post(`${this.baseUrl}cadastropaciente`, paciente);
   }
 
-  login(cpf: string, senha: string): Observable<any> {
-    return this.http.post(`${this.baseUrl}cadastrofono`, { cpf, senha });
+  login(cpf: string, password: string): Observable<any> {
+    return this.http.post(`${this.baseUrl}login`, { cpf, password });
   }
 
-  getFonos(): Observable<any[]> {
+   getFonos(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}`);
   }
 

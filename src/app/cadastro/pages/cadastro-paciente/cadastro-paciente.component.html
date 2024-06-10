@@ -1,7 +1,7 @@
 <app-simple-header [tela]="'Cadastra-se'" [menus]="menus"></app-simple-header>
 <div class="container">
   <h1>Cadastro Paciente</h1>
-  <form (submit)="cadastrarPaciente()">
+  <form (ngSubmit)="savePaciente()">
     <div class="input-group">
       <input type="text" placeholder="Nome" [(ngModel)]="paciente.nome" name="nome">
     </div>

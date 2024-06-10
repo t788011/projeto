@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { Component } from '@angular/core';
+import { NgIf, NgFor, NgClass } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { FonoService } from '../services/fono.service';
 import { SimpleHeaderComponent } from '../components/simple-header/simple-header.component';
-import { FonoService } from '../services/fono.service'; // Importar o serviço
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule, SimpleHeaderComponent],
+  imports: [RouterModule, SimpleHeaderComponent, NgIf, NgFor, NgClass, FormsModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -28,21 +30,19 @@ export class LoginComponent {
     {nome:'Comunicação' ,path: "home/pages/comunicacao"}
   ];
 
+  public cpf: string = '';
+  public password: string = '';
+
   constructor(private router: Router, private fonoService: FonoService) {}
 
-  public redirectToPatients() {
-    this.router.navigate(['pacientes/pages/inicio']);
-  }
-
-  public redirectToCadastroInicial() {
-    this.router.navigate(['cadastro/pages/inicio']);
-  }
-
-  public login(cpf: string, senha: string) {
-    this.fonoService.login(cpf, senha).subscribe(response => {
+  public login() {
+    this.fonoService.login(this.cpf, this.password).subscribe(response => {
+      console.log("Informações passadas")
       if (response.tipo === 'fono') {
+        console.log("Fono encontrada")
         this.router.navigate(['fono/pages/inicio']);
       } else if (response.tipo === 'paciente') {
+        console.log("Paciente encontrada")
         this.router.navigate(['pacientes/pages/inicio']);
       } else {
         alert('Login falhou');
@@ -51,5 +51,9 @@ export class LoginComponent {
       console.error(error);
       alert('Erro no login');
     });
+  }
+
+  public redirectToCadastroInicial() {
+    this.router.navigate(['cadastro/pages/inicio']);
   }
 }
