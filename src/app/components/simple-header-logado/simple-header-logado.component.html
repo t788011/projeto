@@ -1,0 +1,40 @@
+<nav class="estilo">
+    <div class="d-flex justify-content-between ">
+
+      <nav role="navigation">
+        <div id="menuToggle">
+  
+          <input type="checkbox" />
+  
+          <span></span>
+          <span></span>
+          <span></span>
+  
+          @if (menus.length > 0) {
+          <ul id="menu">
+            @for (menu of menus; track menu.nome) {
+            <a (click)="redirectToPath(menu.path)">
+              <li>{{menu.nome}}</li>
+            </a>
+            }
+  
+          </ul>
+          }
+  
+        </div>
+      </nav>
+      <div>
+        <p class="teste">{{tela}}</p>
+      </div>
+      <div>
+        <img class="margem-logo" src="../../../assets/img/logoFalaMais.png" alt="FalaMaisEntrar">
+      </div>
+      <div>
+        <a ><img class="nav-item margem-icone" src="../../../assets/img/configurar.png" alt="configurar" ></a>
+        <a routerLink="/home/pages/inicio"><img class="nav-item margem-icone" src="../../../assets/img/sair.png" alt="sair"></a>
+      </div>
+    </div>
+  </nav>
+
+  
+  

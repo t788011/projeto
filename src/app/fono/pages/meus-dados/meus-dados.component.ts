@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { SimpleHeaderComponent } from '../../../components/simple-header/simple-header.component';
+import { SimpleHeaderLogadoComponent } from '../../../components/simple-header-logado/simple-header-logado.component';
 
 @Component({
   selector: 'app-meus-dados',
   standalone: true,
-  imports: [RouterModule, CommonModule, SimpleHeaderComponent],
+  imports: [RouterModule,  SimpleHeaderLogadoComponent],
   templateUrl: './meus-dados.component.html',
   styleUrls: ['./meus-dados.component.css']
 })
 export class MeusDadosComponent {
   public menus = [
-    {nome:'Acessos Fonoaudiólogo'},
+    {nome:'[Acessos Fono]'},
     {nome:'Início', path: "fono/pages/inicio"},
     {nome:'Gerenciar Pictogramas', path: "fono/pages/gerenciar-pictogramas"},
     {nome:'Cadastrar Parceiros', path: "fono/pages/cadastrar-parceiros"},
@@ -23,28 +22,5 @@ export class MeusDadosComponent {
     {nome:'Entrevistas', path: "fono/pages/entrevistas"}
   ];
 
-  public playSelection(): void {
-    console.log('Play button clicked');
-    // Adicione a funcionalidade para reproduzir a seleção
-  }
-
-  public clearSelection(): void {
-    console.log('Clear button clicked');
-    // Adicione a funcionalidade para limpar a seleção
-  }
-
-  public deleteWord(): void {
-    console.log('Delete word button clicked');
-    // Adicione a funcionalidade para apagar a palavra
-  }
-
-  public saveConfiguration(): void {
-    console.log('Save configuration');
-    // Adicione a funcionalidade para salvar a configuração
-  }
-
-  public changeTheme(theme: string): void {
-    console.log(`${theme} theme selected`);
-    // Adicione a funcionalidade para mudar o tema
-  }
+  
 }

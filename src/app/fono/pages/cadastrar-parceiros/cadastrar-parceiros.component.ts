@@ -1,17 +1,17 @@
 import { RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
-import { SimpleHeaderComponent } from '../../../components/simple-header/simple-header.component';
+import { SimpleHeaderLogadoComponent } from '../../../components/simple-header-logado/simple-header-logado.component';
 
 @Component({
   selector: 'app-cadastrar-parceiros',
   standalone: true,
-  imports: [RouterModule, SimpleHeaderComponent],
+  imports: [RouterModule, SimpleHeaderLogadoComponent],
   templateUrl: './cadastrar-parceiros.component.html',
   styleUrl: './cadastrar-parceiros.component.css'
 })
 export class CadastrarParceirosComponent {
   public menus = [
-    {nome:'Acessos Fonoaudiólogo'},
+    {nome:'[Acessos Fono]'},
     {nome:'Início', path: "fono/pages/inicio"},
     {nome:'Gerenciar Pictogramas', path: "fono/pages/gerenciar-pictogramas"},
     {nome:'Cadastrar Parceiros', path: "fono/pages/cadastrar-parceiros"},

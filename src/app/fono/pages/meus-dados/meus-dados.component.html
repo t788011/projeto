@@ -1,50 +1,6 @@
-<app-simple-header [tela]="'Meus dados'" [menus]="menus"></app-simple-header>
-    <div class="container">
-      <div class="controls">
-        <button class="play-button" (click)="playSelection()">Reproduzir escolha</button>
-        <div class="selections">
-          <div class="selection">EU</div>
-          <div class="selection">QUERO</div>
-          <div class="selection">BRINCAR</div>
-        </div>
-        <div class="actions">
-          <button class="action-button" (click)="clearSelection()">Limpar</button>
-          <button class="action-button" (click)="deleteWord()">Apagar Palavra</button>
-        </div>
-        <div class="config">
-          <label for="patient-select">Escolha o Paciente</label>
-          <select id="patient-select">
-            <!-- Adicione as opções aqui -->
-          </select>
-          <label>Número de figuras na tela</label>
-          <div class="figure-options">
-            <input type="radio" id="fig4" name="figures" value="4">
-            <label for="fig4">4</label>
-            <input type="radio" id="fig8" name="figures" value="8" checked>
-            <label for="fig8">8</label>
-            <input type="radio" id="fig16" name="figures" value="16">
-            <label for="fig16">16</label>
-            <input type="radio" id="fig32" name="figures" value="32">
-            <label for="fig32">32</label>
-          </div>
-          <button class="save-button" (click)="saveConfiguration()">Salvar Configuração</button>
-        </div>
-      </div>
-      <div class="pictograms">
-        <div class="pictogram" style="background-color: yellow;">EU</div>
-        <div class="pictogram" style="background-color: orange;">BRINCAR</div>
-        <div class="pictogram" style="background-color: blue;">NÃO QUERO</div>
-        <div class="pictogram" style="background-color: pink;">VOCÊ</div>
-        <div class="pictogram" style="background-color: green;">MAIS</div>
-        <div class="pictogram" style="background-color: lightpink;">SIM</div>
-        <div class="pictogram" style="background-color: lightyellow;">QUERO</div>
-        <div class="pictogram" style="background-color: lightgreen;">COMER</div>
-      </div>
-      <div class="themes">
-        <button class="theme-button" (click)="changeTheme('Passear')">Passear</button>
-        <button class="theme-button" (click)="changeTheme('Alimentos')">Alimentos</button>
-        <button class="theme-button" (click)="changeTheme('Brincadeiras')">Brincadeiras</button>
-      </div>
-    </div>
+<app-simple-header-logado [tela]="'Meus dados'" [menus]="menus"></app-simple-header-logado>
+<div class="d-flex flex-row">
+  <img class="imagem-de-fundo" src="../../../assets/img/PaginaConstrucao.png" alt="Plano de Fundo">
+</div>
 
 

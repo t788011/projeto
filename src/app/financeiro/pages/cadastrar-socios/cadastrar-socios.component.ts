@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import { SimpleHeaderComponent } from '../../../components/simple-header/simple-header.component';
 import { RouterModule } from '@angular/router';
+import { SimpleHeaderLogadoComponent } from '../../../components/simple-header-logado/simple-header-logado.component';
 
 @Component({
   selector: 'app-cadastrar-socios',
   standalone: true,
-  imports: [RouterModule, SimpleHeaderComponent],
+  imports: [RouterModule, SimpleHeaderLogadoComponent],
   templateUrl: './cadastrar-socios.component.html',
   styleUrl: './cadastrar-socios.component.css'
 })
 export class CadastrarSociosComponent {
   public menus = [
-    {nome:'Acessos Financeiro'},
+    {nome:'[Acessos Financeiro]'},
     {nome:'Início', path:"financeiro/pages/inicio" },
     {nome:'Pagamentos', path:"financeiro/pages/pagamentos" },
     {nome:'Fonoaudiólogos', path:"financeiro/pages/fonoaudiologos"},

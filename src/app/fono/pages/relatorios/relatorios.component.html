@@ -1,23 +1,5 @@
-<app-simple-header [tela]="'Relatórios'" [menus]="menus"></app-simple-header>
-<div class="container">
-  <div class="main-content">
-    <div class="image-display">
-      <img *ngFor="let img of selectedImages; let i = index" [src]="img.src" [alt]="img.alt" (click)="replaceImage(i)">
-    </div>
-    <div class="controls">
-      <button (click)="clearSelection()">Limpar</button>
-      <button (click)="removeLast()">Apagar Palavra</button>
-    </div>
-    <div class="pictograms">
-      <div class="pictogram" *ngFor="let pic of pictograms" (click)="selectPictogram(pic)">
-        <img [src]="pic.src" [alt]="pic.alt">
-        <span>{{pic.label}}</span>
-      </div>
-    </div>
-  </div>
-  <div class="side-panel">
-    <div class="category" *ngFor="let category of categories" (click)="selectCategory(category)">
-      <span>{{category.name}}</span>
-    </div>
-  </div>
+<app-simple-header-logado [tela]="'Relatórios'" [menus]="menus"></app-simple-header-logado>
+<div class="d-flex flex-row">
+  <img class="imagem-de-fundo" src="../../../assets/img/PaginaConstrucao.png" alt="Plano de Fundo">
 </div>
+

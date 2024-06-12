@@ -1,17 +1,17 @@
 import { RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
-import { SimpleHeaderComponent } from '../../../components/simple-header/simple-header.component';
+import { SimpleHeaderLogadoComponent } from '../../../components/simple-header-logado/simple-header-logado.component';
 
 @Component({
   selector: 'app-pagamentos',
   standalone: true,
-  imports: [RouterModule, SimpleHeaderComponent],
+  imports: [RouterModule, SimpleHeaderLogadoComponent],
   templateUrl: './pagamentos.component.html',
   styleUrl: './pagamentos.component.css'
 })
 export class PagamentosComponent {
   public menus = [
-    {nome:'Acessos Financeiro'},
+    {nome:'[Acessos Financeiro]'},
     {nome:'Início', path:"financeiro/pages/inicio" },
     {nome:'Pagamentos', path:"financeiro/pages/pagamentos" },
     {nome:'Fonoaudiólogos', path:"financeiro/pages/fonoaudiologos"},

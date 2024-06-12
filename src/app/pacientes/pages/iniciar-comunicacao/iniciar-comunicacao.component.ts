@@ -1,18 +1,18 @@
 import { RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SimpleHeaderComponent } from '../../../components/simple-header/simple-header.component';
+import { SimpleHeaderLogadoComponent } from '../../../components/simple-header-logado/simple-header-logado.component';
 
 @Component({
   selector: 'app-iniciar-comunicacao',
   standalone: true,
-  imports: [RouterModule,CommonModule, SimpleHeaderComponent],
+  imports: [RouterModule,CommonModule, SimpleHeaderLogadoComponent],
   templateUrl: './iniciar-comunicacao.component.html',
   styleUrls: ['./iniciar-comunicacao.component.css']
 })
 export class IniciarComunicacaoComponent {
   public menus = [
-    {nome:'Acessos Paciente'},
+    {nome:'[Acessos Paciente]'},
     {nome:'Início', path: "pacientes/pages/inicio"},
     {nome:'Iniciar Comunicação', path: "pacientes/pages/iniciar-comunicacao"},
     {nome:'Evolução', path: "pacientes/pages/evolucao"},

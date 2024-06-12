@@ -3,37 +3,37 @@
   <h1>Cadastro Paciente</h1>
   <form (ngSubmit)="savePaciente()">
     <div class="input-group">
-      <input type="text" placeholder="Nome" [(ngModel)]="paciente.nome" name="nome">
+      <input type="text" placeholder="Nome" [(ngModel)]="paciente.nome" name="nome" required>
     </div>
     <div class="input-group">
-      <input type="text" placeholder="Data de Nascimento" [(ngModel)]="paciente.dataNascimento" name="dataNascimento">
+      <input type="text" placeholder="Data de Nascimento (ano-mês-dia)" [(ngModel)]="paciente.dataNascimento" name="dataNascimento" required>
     </div>
     <div class="input-group">
-      <input type="text" placeholder="Endereço" [(ngModel)]="paciente.endereco" name="endereco">
+      <input type="text" placeholder="Endereço" [(ngModel)]="paciente.endereco" name="endereco" required>
     </div>
     <div class="input-group">
-      <input type="text" placeholder="Telefone" [(ngModel)]="paciente.telefone" name="telefone">
+      <input type="text" placeholder="Telefone" [(ngModel)]="paciente.telefone" name="telefone" required>
     </div>
     <div class="input-group">
-      <input type="text" placeholder="CPF" [(ngModel)]="paciente.cpf" name="cpf">
+      <input type="text" placeholder="CPF" [(ngModel)]="paciente.cpf" name="cpf" required>
     </div>
     <div class="input-group">
-      <input type="text" placeholder="Tipo de Deficiência" [(ngModel)]="paciente.tipoDeficiencia" name="tipoDeficiencia">
+      <input type="text" placeholder="Tipo de Deficiência" [(ngModel)]="paciente.tipoDeficiencia" name="tipoDeficiencia" required>
     </div>
     <div class="input-group">
-      <input type="text" placeholder="Nome do Responsável" [(ngModel)]="paciente.nomeResponsavel" name="nomeResponsavel">
+      <input type="text" placeholder="Nome do Responsável" [(ngModel)]="paciente.nomeResponsavel" name="nomeResponsavel" required>
     </div>
     <div class="input-group">
-      <input type="text" placeholder="Email" [(ngModel)]="paciente.email" name="email">
+      <input type="text" placeholder="Email" [(ngModel)]="paciente.email" name="email" required>
     </div>
     <div class="input-group">
-      <input type="text" placeholder="Confirme o Email" [(ngModel)]="paciente.confirmarEmail" name="confirmarEmail">
+      <input type="text" placeholder="Confirme o Email" [(ngModel)]="paciente.confirmarEmail" name="confirmarEmail" required>
     </div>
     <div class="input-group">
-      <input type="password" placeholder="Senha" [(ngModel)]="paciente.senha" name="senha">
+      <input type="password" placeholder="Senha" [(ngModel)]="paciente.senha" name="senha" required>
     </div>
     <div class="input-group">
-      <input type="password" placeholder="Confirme a Senha" [(ngModel)]="paciente.confirmarSenha" name="confirmarSenha">
+      <input type="password" placeholder="Confirme a Senha" [(ngModel)]="paciente.confirmarSenha" name="confirmarSenha" required>
     </div>
     <div class="button-group">
       <button class="cancel-button" type="button" (click)="redirectToCadastroInicial()">Cancelar</button>

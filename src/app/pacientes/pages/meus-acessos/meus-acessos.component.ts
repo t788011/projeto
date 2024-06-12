@@ -1,17 +1,17 @@
 import { RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
-import { SimpleHeaderComponent } from '../../../components/simple-header/simple-header.component';
+import { SimpleHeaderLogadoComponent } from '../../../components/simple-header-logado/simple-header-logado.component';
 
 @Component({
   selector: 'app-meus-acessos',
   standalone: true,
-  imports: [RouterModule, SimpleHeaderComponent],
+  imports: [RouterModule, SimpleHeaderLogadoComponent],
   templateUrl: './meus-acessos.component.html',
   styleUrl: './meus-acessos.component.css'
 })
 export class MeusAcessosComponent {
   public menus = [
-    {nome:'Acessos Paciente'},
+    {nome:'[Acessos Paciente]'},
     {nome:'Início', path: "pacientes/pages/inicio"},
     {nome:'Iniciar Comunicação', path: "pacientes/pages/iniciar-comunicacao"},
     {nome:'Evolução', path: "pacientes/pages/evolucao"},
