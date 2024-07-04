@@ -1,28 +1,83 @@
 <app-simple-header-logado [tela]="'Gerenciar Pictogramas'" [menus]="menus"></app-simple-header-logado>
 <div class="body">
   <div class="container">
-    <div class="toolbar">
-      <div>
-        <a (click)="playFigures()" class="control-button play"><img src="../../../../assets/img/reproduzirEscolha.png" alt="Som"></a>
+    <div class="top-bar">
+      <a (click)="playFigures()" class="control-button play"><img src="../../../../assets/img/reproduzirEscolha.png" alt="Som"></a>
+      <div class="phrase-area">
+        <div class="selected-figures">
+          <div *ngFor="let figure of selectedFigures" class="figure" (click)="addFigure(figure.label)">
+            <img [src]="getFigureSrc(figure)" [alt]="figure">
+          </div>
+        </div>
       </div>
-      <div>
+      <div class="nav-buttons">
         <a (click)="clearFigures()" class="control-button"><img src="../../../../assets/img/limpar.png" alt="Limpar"></a>
-      </div>
-      <div>
         <a (click)="deleteLastFigure()" class="control-button"><img src="../../../../assets/img/apagarPalavras.png" alt="Apagar Palavra"></a>
       </div>
     </div>
-    <div class="phrase-area">
-      <div class="selected-figures">
-        <div *ngFor="let figure of selectedFigures" class="figure">
-          <img [src]="getFigureSrc(figure)" [alt]="figure">
+    <div class="figures-area">
+      <div  class="figure" (click)="openCreateModal()">
+        <img src="../../../../assets/img/adicionarFigura.png" alt="adicionar figura"  >
+      </div>
+      <div *ngFor="let figure of figures" class="figure">
+        <img [src]="figure.image_path" [alt]="figure.label" (click)="addFigure(figure.label)">
+        <button class="edit-button" (click)="openEditModal(figure)">Editar</button>
+        <button class="edit-button1" (click)="deletarModal(figure)">Deletar</button>
+        <div class="edit-button2">
+          <label for="pictogramas">Ativo</label>
+          <input type="checkbox" id="pictogramas" name="pictogramas" [checked]="figure.ativo=='S' ?  true:false" (change)="figureDesativo($event, figure)">
         </div>
       </div>
     </div>
-    <div class="figures-area">
-      <div *ngFor="let figure of figures" class="figure" (click)="addFigure(figure.label)">
-        <img [src]="figure.src" [alt]="figure.label">
+    <div class="sidebar">
+      <div class="temas">
+        <!-- Adicionando evento de clique para carregar novas figuras -->
+        <a (click)="loadFigures()" class="control-button"><img src="../../../../assets/img/comunicacaoInicial.png" alt="pictograms"></a>
+        <a (click)="loadNewFigures()" class="control-button"><img src="../../../../assets/img/alimentos.png" alt="alimentos"></a>
+        <a (click)="loadBrincar()" class="control-button"><img src="../../../../assets/img/brincadeiras.png" alt="brincar"></a>
       </div>
     </div>
   </div>
 </div>
+
+<div *ngIf="editFigure" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeEditModal()">&times;</span>
+    <h2>EDITAR FIGURA</h2>
+    <img [src]="editFigure.image_path" alt="Imagem" width="200" height="200" class="center-image">
+    <label for="figureInput"><span class="highlight-text">SELECIONE UMA FIGURA</span></label>
+    <input type="file" (change)="onImageSelected($event)">
+    <label for="audioInput"><span class="highlight-text">SELECIONE UM ÁUDIO</span></label>
+    <input id="audioInput" type="file" (change)="onAudioSelected($event)">
+    <label for="labelInput"><span class="highlight-text">DIGITE O NOME DA FIGURA</span></label>
+    <input id="labelInput" type="text" [(ngModel)]="label">
+    <button (click)="closeEditModal()">CANCELAR</button>
+    <button (click)="saveEditedFigure()">SALVAR</button>
+  </div>
+</div>
+
+<div *ngIf="createFigure" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeCreateModal()">&times;</span>
+    <h2>ADICIONAR FIGURA</h2>
+    <label for="figureInput"><span class="highlight-text">SELECIONE UMA FIGURA</span></label>
+    <input type="file" (change)="onImageSelected($event)">
+    <label for="audioInput"><span class="highlight-text">SELECIONE UM ÁUDIO</span></label>
+    <input id="audioInput" type="file" (change)="onAudioSelected($event)">
+    <label for="labelInput"><span class="highlight-text">DIGITE O NOME DA FIGURA</span></label>
+    <input id="labelInput" type="text" [(ngModel)]="label">
+    <button (click)="closeCreateModal()">CANCELAR</button>
+    <button (click)="saveCreateFigure()">SALVAR</button>
+  </div>
+</div>
+
+<div *ngIf="deleteFigure" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeDeleteModal()">&times;</span>
+    <h2>DELETAR FIGURA</h2>
+    <label for="figureInput"><span class="highlight-text">TEM CERTEZA QUE DESEJA DELETAR O CARD</span></label>
+    <button (click)="closeDeleteModal()">CANCELAR</button>
+    <button (click)="saveDeleteFigure()">DELETAR</button>
+  </div>
+</div>
+

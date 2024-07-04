@@ -1,54 +1,55 @@
-body {
+/* CSS Ajustado */
+.body {
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
   background-color: #f0f0f0;
 }
 
 .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
   width: 90%;
-  max-width: 1200px;
+  max-width: 1470px;
   background-color: white;
-  border: 2px solid #ccc;
-  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 
-.toolbar {
+.top-bar {
+  grid-column: span 2;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  align-items: flex-start; /* Ajuste para manter o tamanho inicial */
+  background-color: #ccc;
+  padding: 10px;
 }
 
-.control-button {
-
+.play-btn, .nav-buttons button, .save-btn, .tema-btn, .remove-btn {
+  background-color: #007BFF;
   color: white;
-  padding: 10px 20px;
   border: none;
-  
+  padding: 10px;
+  border-radius: 5px;
   cursor: pointer;
+  margin: 5px;
 }
 
-.play{
-  margin-left: ;
+.play-btn:hover, .nav-buttons button:hover, .save-btn:hover, .tema-btn:hover, .remove-btn:hover {
+  background-color: #0056b3;
 }
-
 
 .phrase-area {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  transform: scale(0.9);
-
-}
-
-.selected-figures {
-  display: flex;
-  gap: 10px;
 }
 
 .figures-area {
@@ -59,45 +60,252 @@ body {
 }
 
 .figure {
-  background-color: #ffd700;
+  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  border: 2px solid #000;
-  border-radius: 10px;
-  cursor: pointer;
-  padding: 10px;
+  position: relative;
 }
 
 .figure img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 320px;
+  height: 320px;
+  object-fit: cover; /* Para manter a proporção e preencher o espaço */
 }
 
-.config-area {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.config-area select {
-  padding: 5px;
-}
-
-.themes-area {
-  display: flex;
-  justify-content: space-around;
-}
-
-.theme {
-  background-color: #ff6347;
+.edit-button {
+  position: absolute;
+  top: 5px; /* Ajuste conforme necessário para posicionar corretamente */
+  left: 5px; /* Ajuste conforme necessário para posicionar corretamente */
+  z-index: 1; /* Para garantir que fique sobre a imagem */
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  padding: 10px 20px;
+  border: none;
+  padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.theme:hover {
-  background-color: #ff4500;
+.edit-button1 {
+  position: absolute;
+  top: 40px; /* Ajuste conforme necessário para posicionar corretamente */
+  left: 5px; /* Ajuste conforme necessário para posicionar corretamente */
+  z-index: 1; /* Para garantir que fique sobre a imagem */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-button2 {
+  position: absolute;
+  top: 80px; /* Ajuste conforme necessário para posicionar corretamente */
+  left: 5px; /* Ajuste conforme necessário para posicionar corretamente */
+  z-index: 1; /* Para garantir que fique sobre a imagem */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.option img {
+  width: 50px;
+  height: 50px;
+}
+
+.option span {
+  margin-top: 5px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.selected-figures {
+  display: flex;
+  gap: 10px;
+}
+
+.selected-figures .figure {
+  display: flex;
+  align-items: center;
+}
+
+.selected-figures .figure img {
+  width: 135px; /* Tamanho ajustável conforme necessário */
+  height: 135px;
+  border-radius: 5px;
+}
+
+.pictogram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.pictogram img {
+  width: 100px;
+  height: 100px;
+}
+
+.pictogram span {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #ccc;
+}
+
+.config {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.temas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tema-btn, .remove-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* fundo escuro semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  max-width: 600px; /* máximo de 600px */
+  max-height: 80%;
+  overflow: auto;
+
+  
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #666;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  color: #333;
+  text-align: center; /* centralizado */
+}
+
+.modal-content label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #007bff; /* cor destacada para os labels */
+}
+
+.modal-content input[type="file"],
+.modal-content input[type="text"],
+.modal-content button {
+  margin-top: 6px; /* espaçamento interno ajustado */
+  padding: 10px 14px; /* espaçamento interno dos elementos aumentado */
+  font-size: 16px; /* tamanho da fonte aumentado */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.modal-content input[type="file"] {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.modal-content button {
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+}
+
+.modal-content button:first-of-type {
+  margin-top: 25px;
+}
+
+.center-image {
+  display: block;
+  margin: 0 auto; /* Isso centraliza a imagem horizontalmente */
+}
+
+.checkbox-wrapper {
+  width: 477px;
+  height: 35px;
+  border: 1px solid #e2e0e0;
+  background-color: #e2e0e0 ;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Alinhar o label no centro horizontalmente */
+  margin-top: 11px; /* Adicionado espaçamento superior */
+  margin-bottom: 11px;
+  line-height: 35px; /* Centralizar verticalmente o texto */
+  border-radius: 10px;
+}
+
+.checkbox-container {
+  width: 100%; /* Ocupa metade da largura do checkbox-wrapper */
+  display: flex;
+  justify-content: space-between; /* Alinha a label e o checkbox à esquerda e à direita */
+  align-items: center;
 }

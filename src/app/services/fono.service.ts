@@ -38,4 +38,42 @@ export class FonoService {
   deleteFono(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
+
+  updatePictro(id: number, pictro: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}pictograms/${id}`, pictro);
+  }
+
+  updateAlimento(id: number, alimento: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}alimentos/${id}`, alimento);
+  }
+
+  updateBrincar(id: number, brincar: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}brincar/${id}`, brincar);
+  }
+
+  deletePictro(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}pictograms/${id}`);
+  }
+
+  deleteAlimento(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}alimentos/${id}`);
+  }
+
+  deleteBrincar(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}brincar/${id}`);
+  }
+
+  createPictro( pictro: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}pictograms`, pictro);
+  }
+
+  createAlimento(alimento: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}alimentos`, alimento);
+  }
+
+  createBrincar(brincar: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}brincar`, brincar);
+  }
+
+  
 }

@@ -37,7 +37,7 @@ export class CadastroPacienteComponent {
     telefone: '',
     cpf: '',
     tipoDeficiencia: '',
-    nomeResponsavel: '',
+    nome_responsavel: '',
     email: '',
     confirmarEmail: '',
     senha: '',
@@ -54,7 +54,7 @@ constructor(private router: Router, private fonoService: FonoService) { }
   }
 
   public savePaciente() {
-    if (this.paciente.email !== this.paciente.confirmarEmail || this.paciente.senha !== this.paciente.confirmarSenha) {
+      if (this.paciente.email !== this.paciente.confirmarEmail || this.paciente.senha !== this.paciente.confirmarSenha) {
       alert("Email e/ou senha não conferem!");
       return;
     }
